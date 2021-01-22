@@ -17,6 +17,8 @@
 		DB42A9CB25B9B87200F237A7 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9CA25B9B87200F237A7 /* ChannelVC.swift */; };
 		DB42A9D925B9F6C300F237A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9D725B9F6C300F237A7 /* SWRevealViewController.m */; };
 		DB42A9DB25BAAFDC00F237A7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9DA25BAAFDC00F237A7 /* GradientView.swift */; };
+		DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9DD25BAC09200F237A7 /* Constans.swift */; };
+		DB42A9E025BAC65100F237A7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9DF25BAC65100F237A7 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		DB42A9D725B9F6C300F237A7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DB42A9D825B9F6C300F237A7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DB42A9DA25BAAFDC00F237A7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		DB42A9DD25BAC09200F237A7 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		DB42A9DF25BAC65100F237A7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		DB42A9A925B83C0900F237A7 /* smack-chat-app */ = {
 			isa = PBXGroup;
 			children = (
+				DB42A9DC25BAC05700F237A7 /* Utilities */,
 				DB42A9C725B9B84200F237A7 /* Model */,
 				DB42A9C625B9B83A00F237A7 /* View */,
 				DB42A9C525B9B83000F237A7 /* Controller */,
@@ -109,6 +114,7 @@
 			children = (
 				DB42A9C825B9B86000F237A7 /* ChatVC.swift */,
 				DB42A9CA25B9B87200F237A7 /* ChannelVC.swift */,
+				DB42A9DF25BAC65100F237A7 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +132,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DB42A9DC25BAC05700F237A7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DB42A9DD25BAC09200F237A7 /* Constans.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		DF0798F3F6DFD8D6A805EB58 /* Frameworks */ = {
@@ -257,9 +271,11 @@
 			files = (
 				DB42A9C925B9B86000F237A7 /* ChatVC.swift in Sources */,
 				DB42A9AB25B83C0900F237A7 /* AppDelegate.swift in Sources */,
+				DB42A9E025BAC65100F237A7 /* LoginVC.swift in Sources */,
 				DB42A9DB25BAAFDC00F237A7 /* GradientView.swift in Sources */,
 				DB42A9D925B9F6C300F237A7 /* SWRevealViewController.m in Sources */,
 				DB42A9AD25B83C0900F237A7 /* SceneDelegate.swift in Sources */,
+				DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */,
 				DB42A9CB25B9B87200F237A7 /* ChannelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
