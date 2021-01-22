@@ -16,6 +16,7 @@
 		DB42A9C925B9B86000F237A7 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9C825B9B86000F237A7 /* ChatVC.swift */; };
 		DB42A9CB25B9B87200F237A7 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9CA25B9B87200F237A7 /* ChannelVC.swift */; };
 		DB42A9D925B9F6C300F237A7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9D725B9F6C300F237A7 /* SWRevealViewController.m */; };
+		DB42A9DB25BAAFDC00F237A7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9DA25BAAFDC00F237A7 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DB42A9D625B9F6B300F237A7 /* smack-chat-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "smack-chat-app-Bridging-Header.h"; sourceTree = "<group>"; };
 		DB42A9D725B9F6C300F237A7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DB42A9D825B9F6C300F237A7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DB42A9DA25BAAFDC00F237A7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		DB42A9C625B9B83A00F237A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB42A9DA25BAAFDC00F237A7 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				DB42A9C925B9B86000F237A7 /* ChatVC.swift in Sources */,
 				DB42A9AB25B83C0900F237A7 /* AppDelegate.swift in Sources */,
+				DB42A9DB25BAAFDC00F237A7 /* GradientView.swift in Sources */,
 				DB42A9D925B9F6C300F237A7 /* SWRevealViewController.m in Sources */,
 				DB42A9AD25B83C0900F237A7 /* SceneDelegate.swift in Sources */,
 				DB42A9CB25B9B87200F237A7 /* ChannelVC.swift in Sources */,
