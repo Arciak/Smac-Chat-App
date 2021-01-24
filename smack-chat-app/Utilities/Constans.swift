@@ -8,9 +8,23 @@
 
 import Foundation
 
+typealias ComplationHandler = (_ Success: Bool) -> ()
+
+//typealias Artur = String// remaped a type
+//let name: Artur = "Artur"
+
+//URL constans
+let BASE_URL = "https://arturchat.herokuapp.com/v1/"
+let URL_REGISTER = "\(BASE_URL)account/register"
 
 //Segues
 
 let TO_LOGIN = "toLogin"
 let TO_CREAT_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
+
+
+//User defaults
+let TOKEN_KEY = "token"
+let LOGGED_IN_KEY = "loggedIn"
+let USER_EMAIL = "userEmail"
