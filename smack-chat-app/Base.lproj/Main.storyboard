@@ -261,7 +261,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr6-Ba-9Vl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr6-Ba-9Vl" customClass="RoundedButton" customModule="smack_chat_app" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="267.5" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -272,6 +272,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -325,6 +330,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="aTR-1t-0TC" eventType="touchUpInside" id="O1r-zA-ffq"/>
+                                    <action selector="pickAvatarPressed:" destination="A0U-6a-cqM" eventType="touchUpInside" id="6vY-Md-thh"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RWP-dU-ssb">
@@ -348,16 +354,16 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-cp-hs5">
-                                        <rect key="frame" x="0.0" y="51.5" width="250" height="20"/>
+                                        <rect key="frame" x="0.0" y="51.5" width="250" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="fia-44-fkm"/>
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWi-2b-477">
-                                        <rect key="frame" x="0.0" y="85.5" width="250" height="2"/>
+                                        <rect key="frame" x="0.0" y="87" width="250" height="2"/>
                                         <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="B2j-Hu-p2M"/>
@@ -365,13 +371,13 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BzC-PK-vKE">
-                                        <rect key="frame" x="0.0" y="101.5" width="250" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="103" width="250" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="zTR-gH-fhd"/>
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-QX-DDZ">
                                         <rect key="frame" x="0.0" y="137" width="250" height="2"/>
@@ -383,7 +389,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy1-Ur-C2f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy1-Ur-C2f" customClass="RoundedButton" customModule="smack_chat_app" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -394,6 +400,14 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccntPressed:" destination="A0U-6a-cqM" eventType="touchUpInside" id="baM-NR-pYH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg2-Ea-VYA">
                                 <rect key="frame" x="104" y="60" width="167" height="23"/>
@@ -420,6 +434,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="aTR-1t-0TC" eventType="touchUpInside" id="i5m-Lr-9W0"/>
+                                    <action selector="pickBgColorPressed:" destination="A0U-6a-cqM" eventType="touchUpInside" id="37t-7i-tip"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -445,6 +460,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="OxD-fo-of7"/>
                     <connections>
+                        <outlet property="emailTxt" destination="rbY-cp-hs5" id="7Ki-WA-Pyu"/>
+                        <outlet property="passTxt" destination="BzC-PK-vKE" id="zNs-mU-pt1"/>
+                        <outlet property="userImg" destination="3IA-Uh-QDT" id="mfy-fV-bp5"/>
+                        <outlet property="userNameTxt" destination="xMN-Ao-25k" id="0MA-41-wey"/>
                         <segue destination="qL5-95-YyX" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="2Ud-Wu-jC3"/>
                     </connections>
                 </viewController>

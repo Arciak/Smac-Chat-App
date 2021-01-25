@@ -15,7 +15,7 @@ typealias ComplationHandler = (_ Success: Bool) -> ()
 
 //URL constans
 let BASE_URL = "https://arturchat.herokuapp.com/v1/"
-let URL_REGISTER = "\(BASE_URL)account/register"
+let URL_REGISTER = "\(BASE_URL)account/register/"
 
 //Segues
 

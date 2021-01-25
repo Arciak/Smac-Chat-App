@@ -21,6 +21,7 @@
 		DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9DD25BAC09200F237A7 /* Constans.swift */; };
 		DB42A9E025BAC65100F237A7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42A9DF25BAC65100F237A7 /* LoginVC.swift */; };
 		DB734F7925BD90CF0052C6D4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB734F7825BD90CF0052C6D4 /* AuthService.swift */; };
+		DB734F7B25BEEF000052C6D4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB734F7A25BEEF000052C6D4 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DB42A9DD25BAC09200F237A7 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		DB42A9DF25BAC65100F237A7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DB734F7825BD90CF0052C6D4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DB734F7A25BEEF000052C6D4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				DB42A9DA25BAAFDC00F237A7 /* GradientView.swift */,
+				DB734F7A25BEEF000052C6D4 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				DB42A9DB25BAAFDC00F237A7 /* GradientView.swift in Sources */,
 				DB42A9D925B9F6C300F237A7 /* SWRevealViewController.m in Sources */,
 				DB3AFCFA25BAD0B00087B6BA /* CreateAccountVC.swift in Sources */,
+				DB734F7B25BEEF000052C6D4 /* RoundedButton.swift in Sources */,
 				DB42A9AD25B83C0900F237A7 /* SceneDelegate.swift in Sources */,
 				DB734F7925BD90CF0052C6D4 /* AuthService.swift in Sources */,
 				DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */,

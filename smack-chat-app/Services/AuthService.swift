@@ -50,26 +50,42 @@ class AuthServices {
         
         let lowerCaseEmail = email.lowercased()
         let header: HTTPHeaders = [
-            "Content-Type": "application/json; charset=utf-8"
+            "Content-Type": "application/json"
         ]
         
-        let body: [String: Any] = [
-            "emial": lowerCaseEmail,
-            "password": password
-        ]
+        struct BodyWebReq: Encodable {
+            let email: String
+            let password: String
+        }
         
         //creat a web request
-        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).responseString { (response) in
+
+        let login = BodyWebReq(email: lowerCaseEmail, password: password)
+        
+        AF.request(URL_REGISTER, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: header).validate(statusCode: 200..<500).responseString { (response) in
             switch response.result {
             case .success:
-                print("Validation Successful")
                 complation(true)
+                print("Validation Successful")
             case let .failure(error):
                 print(error)
                 complation(false)
                 debugPrint(response.error as Any)
             }
         }
+        
+//        AF.request(URL_REGISTER, method: .post, parameters: login, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).validate(statusCode: 200..<500).responseString { (response) in
+//            switch response.result {
+//            case .success:
+//                complation(true)
+//                print("Validation Successful")
+//            case let .failure(error):
+//                print(error)
+//                complation(false)
+//                debugPrint(response.error as Any)
+//            }
+//        }
+        
     }
     
 }
