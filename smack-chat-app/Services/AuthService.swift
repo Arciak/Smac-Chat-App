@@ -17,7 +17,7 @@ class AuthServices {
     //tworzymy singleton
     static let instance = AuthServices()
     
-    let defaults = UserDefaults.standard // this is for simple things like strings, boolen etc not images
+    let defaults = UserDefaults.standard // this is for simple things (create a user) like strings, boolen etc not images
     var isLoggedIn : Bool {
         get {
             return defaults.bool(forKey: LOGGED_IN_KEY)
@@ -47,7 +47,7 @@ class AuthServices {
     
     // create register user function. Using Alamofire (make web request easier) is build on top of apple URL session framwork
     
-    func registerUser(email: String, password: String, complation: @escaping ComplationHandler) {
+    func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
         
@@ -63,17 +63,17 @@ class AuthServices {
         AF.request(URL_REGISTER, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: HEADER).validate(statusCode: 200..<500).responseString { (response) in
             switch response.result {
             case .success:
-                complation(true)
+                completion(true)
                 print("Validation Successful")
             case let .failure(error):
                 print(error)
-                complation(false)
+                completion(false)
                 debugPrint(response.error as Any)
             }
         }
     }
     
-    func loginUser(email: String, password: String, completion: @escaping ComplationHandler) {
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail = email.lowercased()
 
         struct BodyWebReq: Encodable {
@@ -115,6 +115,48 @@ class AuthServices {
                 debugPrint(response.error as Any)
                 
             }
+        }
+        
+    }
+    
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler){
+        
+        let lowerCaseEmail = email.lowercased()
+        struct BodyWebReq: Encodable {
+            let name: String
+            let email: String
+            let avatarName: String
+            let avatarColor: String
+        }
+        let addAccntBody = BodyWebReq(name: name, email: lowerCaseEmail, avatarName: avatarName, avatarColor: avatarColor)
+        
+        let header: HTTPHeaders = [ // from Header In Postman
+            "Authorization": "Bearer \(AuthServices.instance.authToken)",
+            "Content-Type": "application/json"
+        ]
+        
+        AF.request(URL_USER_ADD, method: .post, parameters: addAccntBody, encoder: JSONParameterEncoder.default, headers: header, interceptor: nil, requestModifier: nil).validate(statusCode: 200..<500).responseJSON{
+            (response) in
+            switch response.result {
+            case .success:
+                guard let data = response.data else { return }
+                do {
+                    let json = try JSON(data: data)
+                    let id = json["_id"].stringValue
+                    let color = json["avatarColor"].stringValue
+                    let avatarName = json["avatarName"].stringValue
+                    let email = json["email"].stringValue
+                    let name = json["name"].stringValue
+                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                    completion(true)
+                } catch {
+                    print("SwiftyJSON doesn't work in createUser")
+                }
+            case .failure(_):
+                completion(false)
+                debugPrint(response.error as Any)
+            }
+            
         }
         
     }

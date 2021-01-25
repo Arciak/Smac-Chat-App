@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-typealias ComplationHandler = (_ Success: Bool) -> ()
+typealias CompletionHandler = (_ Success: Bool) -> ()
 
 //typealias Artur = String// remaped a type
 //let name: Artur = "Artur"
@@ -18,6 +18,7 @@ typealias ComplationHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://arturchat.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register/"
 let URL_LOGIN = "\(BASE_URL)account/login/"
+let URL_USER_ADD = "\(BASE_URL)user/add/"
 
 //Segues
 
