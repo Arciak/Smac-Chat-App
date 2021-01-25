@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 // is going to handle all reguster usrers functions
 
@@ -49,9 +50,6 @@ class AuthServices {
     func registerUser(email: String, password: String, complation: @escaping ComplationHandler) {
         
         let lowerCaseEmail = email.lowercased()
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json"
-        ]
         
         struct BodyWebReq: Encodable {
             let email: String
@@ -62,7 +60,7 @@ class AuthServices {
 
         let login = BodyWebReq(email: lowerCaseEmail, password: password)
         
-        AF.request(URL_REGISTER, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: header).validate(statusCode: 200..<500).responseString { (response) in
+        AF.request(URL_REGISTER, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: HEADER).validate(statusCode: 200..<500).responseString { (response) in
             switch response.result {
             case .success:
                 complation(true)
@@ -73,18 +71,51 @@ class AuthServices {
                 debugPrint(response.error as Any)
             }
         }
+    }
+    
+    func loginUser(email: String, password: String, completion: @escaping ComplationHandler) {
+        let lowerCaseEmail = email.lowercased()
+
+        struct BodyWebReq: Encodable {
+            let email: String
+            let password: String
+        }
+        let register = BodyWebReq(email: lowerCaseEmail, password: password)
         
-//        AF.request(URL_REGISTER, method: .post, parameters: login, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil).validate(statusCode: 200..<500).responseString { (response) in
-//            switch response.result {
-//            case .success:
-//                complation(true)
-//                print("Validation Successful")
-//            case let .failure(error):
-//                print(error)
-//                complation(false)
-//                debugPrint(response.error as Any)
-//            }
-//        }
+        AF.request(URL_LOGIN, method: .post, parameters: register, encoder: JSONParameterEncoder.default, headers: HEADER, interceptor: nil, requestModifier: nil).validate(statusCode: 200..<500).responseJSON {
+            (response) in
+            switch response.result {
+            case .success:
+                // reciving date from API
+                
+                //clasic way 
+//                if let json = response.value as? Dictionary<String, Any>{//as? means cast tahat as
+//                    if let email = json["user"] as? String{// zobacz w Postman ze mail jest przypisany do user
+//                        self.userEmail = email
+//                    }
+//                    if let token = json["token"] as? String {// token tez jest z postman
+//                        self.authToken = token
+//                    }
+//                }
+                //Using SwiftyJSON
+                guard let data = response.data else { return }
+                do{
+                    print("In")
+                    let json = try SwiftyJSON.JSON(data: data)//swiftyJSON object
+                    self.userEmail = json["user"].stringValue
+                    self.authToken = json["token"].stringValue
+                    
+                    self.isLoggedIn = true
+                    completion(true)
+                } catch {
+                    print("SwiftyJSON doesn't work")
+                }
+            case .failure(_):
+                completion(false)
+                debugPrint(response.error as Any)
+                
+            }
+        }
         
     }
     

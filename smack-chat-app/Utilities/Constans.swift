@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 typealias ComplationHandler = (_ Success: Bool) -> ()
 
@@ -16,6 +17,7 @@ typealias ComplationHandler = (_ Success: Bool) -> ()
 //URL constans
 let BASE_URL = "https://arturchat.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register/"
+let URL_LOGIN = "\(BASE_URL)account/login/"
 
 //Segues
 
@@ -28,3 +30,9 @@ let UNWIND = "unwindToChannel"
 let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+
+//Headres
+let HEADER: HTTPHeaders = [
+    "Content-Type": "application/json"
+]
