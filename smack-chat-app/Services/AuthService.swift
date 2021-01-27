@@ -130,35 +130,51 @@ class AuthServices {
         }
         let addAccntBody = BodyWebReq(name: name, email: lowerCaseEmail, avatarName: avatarName, avatarColor: avatarColor)
         
-        let header: HTTPHeaders = [ // from Header In Postman
-            "Authorization": "Bearer \(AuthServices.instance.authToken)",
-            "Content-Type": "application/json"
-        ]
         
-        AF.request(URL_USER_ADD, method: .post, parameters: addAccntBody, encoder: JSONParameterEncoder.default, headers: header, interceptor: nil, requestModifier: nil).validate(statusCode: 200..<500).responseJSON{
+        AF.request(URL_USER_ADD, method: .post, parameters: addAccntBody, encoder: JSONParameterEncoder.default, headers: BEARER_HEADER, interceptor: nil, requestModifier: nil).validate(statusCode: 200..<500).responseJSON{
             (response) in
             switch response.result {
             case .success:
                 guard let data = response.data else { return }
-                do {
-                    let json = try JSON(data: data)
-                    let id = json["_id"].stringValue
-                    let color = json["avatarColor"].stringValue
-                    let avatarName = json["avatarName"].stringValue
-                    let email = json["email"].stringValue
-                    let name = json["name"].stringValue
-                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
-                    completion(true)
-                } catch {
-                    print("SwiftyJSON doesn't work in createUser")
-                }
+                self.setUserInfo(data: data)
+                completion(true)
             case .failure(_):
+                print("FAILURE")
                 completion(false)
                 debugPrint(response.error as Any)
             }
-            
         }
         
+    }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        
+        AF.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, headers: FIND_BY_MAIL_HEADRE).validate(statusCode: 200..<500).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                guard let data = response.data else { return }
+                self.setUserInfo(data: data)
+                completion(true)
+            case .failure(_):
+                print("FAILURE findUserByEmail")
+                completion(false)
+                debugPrint(response.error as Any)
+            }
+        }
+    }
+    
+    func setUserInfo(data: Data) {
+        do {
+            let json = try JSON(data: data)
+            let id = json["_id"].stringValue
+            let color = json["avatarColor"].stringValue
+            let avatarName = json["avatarName"].stringValue
+            let email = json["email"].stringValue
+            let name = json["name"].stringValue
+            UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+        } catch {
+            print("SwiftyJSON doesn't work in createUser")
+        }
     }
     
 }

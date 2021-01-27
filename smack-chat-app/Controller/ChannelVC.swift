@@ -25,6 +25,11 @@ class ChannelVC: UIViewController {
         //listening
         NotificationCenter.default.addObserver(self, selector: #selector (ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_CHANGE, object: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // when we open app from scrach
+        setUpUserInfo()
+    }
 
     @IBAction func loginBtnPressed(_ sender: Any) {
         // when we are login it can take us to our PrifileVC so make a check
@@ -36,12 +41,15 @@ class ChannelVC: UIViewController {
         } else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
-        
     }
     
     //this function we create for notificationCenetr
     @objc func userDataDidChange(_ notif: Notification) {
         // add obserevr to listen when notfication is brodcast
+        setUpUserInfo()
+    }
+    
+    func setUpUserInfo() {
         if AuthServices.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
