@@ -108,7 +108,7 @@ class AuthServices {
                     self.isLoggedIn = true
                     completion(true)
                 } catch {
-                    print("SwiftyJSON doesn't work")
+                    print("SwiftyJSON doesn't work in loginUser")
                 }
             case .failure(_):
                 completion(false)
