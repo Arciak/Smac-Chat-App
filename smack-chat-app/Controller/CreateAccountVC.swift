@@ -58,7 +58,7 @@ class CreateAccountVC: UIViewController {
                                 self.spinner.isHidden = true
                                 self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
-                                NotificationCenter.default.post(name: NOTIF_USER_DATA_CHANGE, object: nil)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_CHANGE, object: nil)// brodcast hey we change sth
                             }
                         }
                     }
