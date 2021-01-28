@@ -29,7 +29,7 @@
 		DBCEEACD25C1477A00824A5D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEACB25C1477A00824A5D /* ProfileVC.swift */; };
 		DBCEEACE25C1477A00824A5D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEEACC25C1477A00824A5D /* ProfileVC.xib */; };
 		DBCEEAD125C1ACC800824A5D /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD025C1ACC800824A5D /* MessageService.swift */; };
-		DBCEEAD325C1AD1900824A5D /* Chanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD225C1AD1900824A5D /* Chanel.swift */; };
+		DBCEEAD325C1AD1900824A5D /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD225C1AD1900824A5D /* Channel.swift */; };
 		DBCEEAD525C1FCEC00824A5D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD425C1FCEC00824A5D /* ChannelCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +62,7 @@
 		DBCEEACB25C1477A00824A5D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		DBCEEACC25C1477A00824A5D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		DBCEEAD025C1ACC800824A5D /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
-		DBCEEAD225C1AD1900824A5D /* Chanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chanel.swift; sourceTree = "<group>"; };
+		DBCEEAD225C1AD1900824A5D /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		DBCEEAD425C1FCEC00824A5D /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +163,7 @@
 		DB42A9C725B9B84200F237A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DBCEEAD225C1AD1900824A5D /* Chanel.swift */,
+				DBCEEAD225C1AD1900824A5D /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				DB734F7925BD90CF0052C6D4 /* AuthService.swift in Sources */,
 				DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */,
 				DBCEEAC425BF32A700824A5D /* USerDataService.swift in Sources */,
-				DBCEEAD325C1AD1900824A5D /* Chanel.swift in Sources */,
+				DBCEEAD325C1AD1900824A5D /* Channel.swift in Sources */,
 				DB42A9CB25B9B87200F237A7 /* ChannelVC.swift in Sources */,
 				DBCEEAC625BFEEC300824A5D /* AvatarPickerVC.swift in Sources */,
 				DBCEEACA25C0132600824A5D /* CircleImage.swift in Sources */,
