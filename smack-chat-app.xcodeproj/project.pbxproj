@@ -28,6 +28,8 @@
 		DBCEEACA25C0132600824A5D /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAC925C0132600824A5D /* CircleImage.swift */; };
 		DBCEEACD25C1477A00824A5D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEACB25C1477A00824A5D /* ProfileVC.swift */; };
 		DBCEEACE25C1477A00824A5D /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEEACC25C1477A00824A5D /* ProfileVC.xib */; };
+		DBCEEAD725C292CC00824A5D /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD625C292CC00824A5D /* MessageService.swift */; };
+		DBCEEAD925C2930400824A5D /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD825C2930400824A5D /* Channel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		DBCEEAC925C0132600824A5D /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DBCEEACB25C1477A00824A5D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		DBCEEACC25C1477A00824A5D /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		DBCEEAD625C292CC00824A5D /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		DBCEEAD825C2930400824A5D /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Channel.swift; path = "smack-chat-app/Services/Channel.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 		DB42A9C725B9B84200F237A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DBCEEAD825C2930400824A5D /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				DB734F7825BD90CF0052C6D4 /* AuthService.swift */,
 				DBCEEAC325BF32A700824A5D /* USerDataService.swift */,
+				DBCEEAD625C292CC00824A5D /* MessageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				DB42A9E025BAC65100F237A7 /* LoginVC.swift in Sources */,
 				DBCEEACD25C1477A00824A5D /* ProfileVC.swift in Sources */,
 				DB42A9DB25BAAFDC00F237A7 /* GradientView.swift in Sources */,
+				DBCEEAD725C292CC00824A5D /* MessageService.swift in Sources */,
+				DBCEEAD925C2930400824A5D /* Channel.swift in Sources */,
 				DB42A9D925B9F6C300F237A7 /* SWRevealViewController.m in Sources */,
 				DB3AFCFA25BAD0B00087B6BA /* CreateAccountVC.swift in Sources */,
 				DB734F7B25BEEF000052C6D4 /* RoundedButton.swift in Sources */,

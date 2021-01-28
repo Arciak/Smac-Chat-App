@@ -34,6 +34,7 @@ let TO_LOGIN = "toLogin"
 let TO_CREAT_ACCOUNT = "toCreateAccount"
 let UNWIND = "unwindToChannel"
 let TO_AVATAR_PICKER = "toAvatarPicker"
+let URL_GET_CHANNELS = "\(BASE_URL)channel/"
 
 
 //User defaults
