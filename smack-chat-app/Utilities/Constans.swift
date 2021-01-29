@@ -45,12 +45,12 @@ let USER_EMAIL = "userEmail"
 
 //Headres
 let HEADER: HTTPHeaders = [
-    "Content-Type": "application/json"
+    "Content-Type": "application/json; charset=utf-8"
 ]
 
 let BEARER_HEADER: HTTPHeaders = [ // from Header In Postman
     "Authorization": "Bearer \(AuthServices.instance.authToken)",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json; charset=utf-8"
 ]
 
 let FIND_BY_MAIL_HEADRE: HTTPHeaders = [

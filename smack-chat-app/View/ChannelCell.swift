@@ -23,7 +23,7 @@ class ChannelCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state. What does the view look like for any of the rose table been selected
         if selected {
-            self.layer.backgroundColor = (UIColor(white: 1, alpha: 0.2) as! CGColor)
+            self.layer.backgroundColor = (UIColor(white: 1, alpha: 0.2).cgColor)
         } else {
             self.layer.backgroundColor = UIColor.clear.cgColor
         }

@@ -29,8 +29,11 @@ class MessageService {
 //                    debugPrint(error as Any)
 //                }
 //                print(self.channels)
+
                 do {
                     let json = try JSON(data: data).arrayValue
+                    print("przed pentla for")
+                    print("WTF:\(json)")
                     for item in json {
                         let name = item["name"].stringValue
                         let channelDescription = item["description"].stringValue
@@ -39,7 +42,7 @@ class MessageService {
                         completion(true)
                         self.channels.append(channel)
                     }
-                    print(self.channels)
+                    print("Channels: \(self.channels)")
                 } catch {
                     debugPrint(error as Any)
                 }

@@ -33,6 +33,7 @@
 		DBCEEAD525C1FCEC00824A5D /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAD425C1FCEC00824A5D /* ChannelCell.swift */; };
 		DBCEEADC25C299F600824A5D /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEADA25C299F600824A5D /* AddChannelVC.swift */; };
 		DBCEEADD25C299F600824A5D /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEEADB25C299F600824A5D /* AddChannelVC.xib */; };
+		DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEADE25C2AD0A00824A5D /* SocketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		DBCEEAD425C1FCEC00824A5D /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		DBCEEADA25C299F600824A5D /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		DBCEEADB25C299F600824A5D /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		DBCEEADE25C2AD0A00824A5D /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				DB734F7825BD90CF0052C6D4 /* AuthService.swift */,
 				DBCEEAC325BF32A700824A5D /* USerDataService.swift */,
 				DBCEEAD025C1ACC800824A5D /* MessageService.swift */,
+				DBCEEADE25C2AD0A00824A5D /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				DB42A9AD25B83C0900F237A7 /* SceneDelegate.swift in Sources */,
 				DB734F7925BD90CF0052C6D4 /* AuthService.swift in Sources */,
 				DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */,
+				DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */,
 				DBCEEAC425BF32A700824A5D /* USerDataService.swift in Sources */,
 				DBCEEAD325C1AD1900824A5D /* Channel.swift in Sources */,
 				DBCEEADC25C299F600824A5D /* AddChannelVC.swift in Sources */,
@@ -505,7 +509,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "smack-chat-app/Supporting Files/smack-chat-app-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -526,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = FingerMethods;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "smack-chat-app/Supporting Files/smack-chat-app-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

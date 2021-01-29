@@ -149,7 +149,7 @@ class AuthServices {
     
     func findUserByEmail(completion: @escaping CompletionHandler) {
         
-        AF.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, headers: FIND_BY_MAIL_HEADRE).validate(statusCode: 200..<500).responseJSON { (response) in
+        AF.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, headers: BEARER_HEADER).validate(statusCode: 200..<500).responseJSON { (response) in
             switch response.result {
             case .success:
                 guard let data = response.data else { return }
