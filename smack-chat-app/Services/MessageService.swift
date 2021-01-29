@@ -16,6 +16,7 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var selectedChannel : Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
         AF.request(URL_GET_CHANNELS, method: .get, headers: BEARER_HEADER).validate(statusCode: 200..<500).responseJSON { (response) in
@@ -33,15 +34,17 @@ class MessageService {
                 do {
                     let json = try JSON(data: data).arrayValue
                     print("przed pentla for")
-                    print("WTF:\(json)")
+                    //print("WTF:\(json)")
                     for item in json {
                         let name = item["name"].stringValue
                         let channelDescription = item["description"].stringValue
                         let id = item["_id"].stringValue
                         let channel = Channel(channelTitle: name, channelDescription: channelDescription, id: id)
-                        completion(true)
                         self.channels.append(channel)
                     }
+                    completion(true)
+                    // add notification to let ChannelVC know: Hey I just pull out all the channels, so reload your tableView and display
+                    NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                     print("Channels: \(self.channels)")
                 } catch {
                     debugPrint(error as Any)
@@ -52,5 +55,11 @@ class MessageService {
                 debugPrint(response.error as Any)
             }
         }
+    }
+    
+    // create function to desapire channels list when we are online
+    func clearChannels() {
+        // clearing out array of channels
+        channels.removeAll()
     }
 }
