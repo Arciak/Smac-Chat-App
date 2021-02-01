@@ -47,14 +47,30 @@ class ChatVC: UIViewController {
     func updateWithChannel() {
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLbl.text = "#\(channelName)"
+        getMessages()
     }
     
     func onLoginGetMessages() {
         MessageService.instance.findAllChannel { (success) in
             if success {
                 // Do staff with channels
+                //if there is no channel we dont want download messages
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                } else {
+                    self.channelNameLbl.text = "No channels yet!"
+                }
             }
         }
+    }
+    
+    func getMessages() {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+        MessageService.instance.findAllMessageForChannel(channelId: channelId) { (success) in
+            
+        }
+        
     }
 
 }

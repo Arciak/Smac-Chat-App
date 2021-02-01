@@ -16,6 +16,7 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var messages = [Message]()
     var selectedChannel : Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
@@ -33,7 +34,7 @@ class MessageService {
 
                 do {
                     let json = try JSON(data: data).arrayValue
-                    print("przed pentla for")
+                    print("przed pentla for w findAllChannel")
                     //print("WTF:\(json)")
                     for item in json {
                         let name = item["name"].stringValue
@@ -55,6 +56,47 @@ class MessageService {
                 debugPrint(response.error as Any)
             }
         }
+    }
+    
+    func findAllMessageForChannel(channelId: String, completion: @escaping CompletionHandler) {
+        AF.request("\(URL_GET_MESSAGE)\(channelId)", method: .get, headers: BEARER_HEADER).validate(statusCode: 200..<500).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                self.clearMessages()
+                guard let data = response.data else { return }
+                do {
+                    let json = try JSON(data: data).arrayValue
+                    print("przed pentla for w findAllMessageForChannel")
+                    for item in json {
+                        let messageBody = item["massegeBody"].stringValue
+                        let channelId = item["channelId"].stringValue
+                        let id = item["_id"].stringValue
+                        let userName = item["userName"].stringValue
+                        let userAvatar = item["userAvatar"].stringValue
+                        let userAvatarColor = item["userAvatarColor"].stringValue
+                        let timeStamp = item["timeStamp"].stringValue
+                        
+                        let message = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+                        self.messages.append(message)
+                    }
+                    print("Messages below: ")
+                    print(self.messages)
+                    completion(true)
+                } catch {
+                    debugPrint(error as Any)
+                }
+            case .failure(_):
+                print("FAILURE findAllMessageForChannel")
+                debugPrint(response.error as Any)
+                completion(false)
+            }
+        }
+        
+    }
+    
+    // after select different channel we have to replac messagesArray, so we have to clearvtehm
+    func clearMessages() {
+        messages.removeAll()
     }
     
     // create function to desapire channels list when we are online

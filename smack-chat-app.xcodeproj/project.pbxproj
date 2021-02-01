@@ -34,6 +34,7 @@
 		DBCEEADC25C299F600824A5D /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEADA25C299F600824A5D /* AddChannelVC.swift */; };
 		DBCEEADD25C299F600824A5D /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEEADB25C299F600824A5D /* AddChannelVC.xib */; };
 		DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEADE25C2AD0A00824A5D /* SocketService.swift */; };
+		DBCEEAE125C7DA7500824A5D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAE025C7DA7500824A5D /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		DBCEEADA25C299F600824A5D /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		DBCEEADB25C299F600824A5D /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		DBCEEADE25C2AD0A00824A5D /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		DBCEEAE025C7DA7500824A5D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				DBCEEAD225C1AD1900824A5D /* Channel.swift */,
+				DBCEEAE025C7DA7500824A5D /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */,
 				DBCEEAC425BF32A700824A5D /* USerDataService.swift in Sources */,
 				DBCEEAD325C1AD1900824A5D /* Channel.swift in Sources */,
+				DBCEEAE125C7DA7500824A5D /* Message.swift in Sources */,
 				DBCEEADC25C299F600824A5D /* AddChannelVC.swift in Sources */,
 				DB42A9CB25B9B87200F237A7 /* ChannelVC.swift in Sources */,
 				DBCEEAC625BFEEC300824A5D /* AvatarPickerVC.swift in Sources */,
