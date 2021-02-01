@@ -68,7 +68,7 @@ class MessageService {
                     let json = try JSON(data: data).arrayValue
                     print("przed pentla for w findAllMessageForChannel")
                     for item in json {
-                        let messageBody = item["massegeBody"].stringValue
+                        let messageBody = item["messageBody"].stringValue
                         let channelId = item["channelId"].stringValue
                         let id = item["_id"].stringValue
                         let userName = item["userName"].stringValue

@@ -39,7 +39,7 @@ class SocketService: NSObject {
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
         swiftSocket.emit("newChannel", channelName, channelDescription)
         completion(true)
-        print("done")
+        print("done addChannel")
     }
     
     func getChannel(completion: @escaping CompletionHandler) {
@@ -53,7 +53,13 @@ class SocketService: NSObject {
             let newChannel = Channel(channelTitle: channelName, channelDescription: channelDesc, id: chanelId)
             MessageService.instance.channels.append(newChannel)
             completion(true)
-            print("done2")
         }
+    }
+    
+    func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
+        let user = UserDataService.instance
+        swiftSocket.emit("newMessage", messageBody, userId, channelId, user.name, user.avatarName, user.avatarColor)
+        completion(true)
+        print("done addMessage")
     }
 }

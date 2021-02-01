@@ -35,6 +35,7 @@
 		DBCEEADD25C299F600824A5D /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBCEEADB25C299F600824A5D /* AddChannelVC.xib */; };
 		DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEADE25C2AD0A00824A5D /* SocketService.swift */; };
 		DBCEEAE125C7DA7500824A5D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAE025C7DA7500824A5D /* Message.swift */; };
+		DBCEEAE325C82EB600824A5D /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAE225C82EB600824A5D /* KeyboardBoundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		DBCEEADB25C299F600824A5D /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		DBCEEADE25C2AD0A00824A5D /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		DBCEEAE025C7DA7500824A5D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DBCEEAE225C82EB600824A5D /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				DBCEEAC725BFF15400824A5D /* AvatarCell.swift */,
 				DBCEEAC925C0132600824A5D /* CircleImage.swift */,
 				DBCEEAD425C1FCEC00824A5D /* ChannelCell.swift */,
+				DBCEEAE225C82EB600824A5D /* KeyboardBoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			files = (
 				DB42A9C925B9B86000F237A7 /* ChatVC.swift in Sources */,
 				DB42A9AB25B83C0900F237A7 /* AppDelegate.swift in Sources */,
+				DBCEEAE325C82EB600824A5D /* KeyboardBoundView.swift in Sources */,
 				DBCEEAC825BFF15400824A5D /* AvatarCell.swift in Sources */,
 				DB42A9E025BAC65100F237A7 /* LoginVC.swift in Sources */,
 				DBCEEACD25C1477A00824A5D /* ProfileVC.swift in Sources */,
