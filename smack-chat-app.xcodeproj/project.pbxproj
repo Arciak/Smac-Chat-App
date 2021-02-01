@@ -36,6 +36,7 @@
 		DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEADE25C2AD0A00824A5D /* SocketService.swift */; };
 		DBCEEAE125C7DA7500824A5D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAE025C7DA7500824A5D /* Message.swift */; };
 		DBCEEAE325C82EB600824A5D /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAE225C82EB600824A5D /* KeyboardBoundView.swift */; };
+		DBCEEAE525C83E8600824A5D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEEAE425C83E8600824A5D /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		DBCEEADE25C2AD0A00824A5D /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		DBCEEAE025C7DA7500824A5D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DBCEEAE225C82EB600824A5D /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		DBCEEAE425C83E8600824A5D /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				DBCEEAC925C0132600824A5D /* CircleImage.swift */,
 				DBCEEAD425C1FCEC00824A5D /* ChannelCell.swift */,
 				DBCEEAE225C82EB600824A5D /* KeyboardBoundView.swift */,
+				DBCEEAE425C83E8600824A5D /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				DB42A9DE25BAC09200F237A7 /* Constans.swift in Sources */,
 				DBCEEADF25C2AD0A00824A5D /* SocketService.swift in Sources */,
 				DBCEEAC425BF32A700824A5D /* USerDataService.swift in Sources */,
+				DBCEEAE525C83E8600824A5D /* MessageCell.swift in Sources */,
 				DBCEEAD325C1AD1900824A5D /* Channel.swift in Sources */,
 				DBCEEAE125C7DA7500824A5D /* Message.swift in Sources */,
 				DBCEEADC25C299F600824A5D /* AddChannelVC.swift in Sources */,
