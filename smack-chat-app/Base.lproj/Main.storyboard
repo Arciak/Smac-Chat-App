@@ -70,12 +70,16 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="WbP-Dz-da0" eventType="editingChanged" id="b3g-Fv-7Kq"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upV-BJ-eau">
                                 <rect key="frame" x="337" y="632" width="30" height="30"/>
                                 <state key="normal" image="send"/>
                                 <connections>
-                                    <action selector="sendMsgPressed:" destination="WbP-Dz-da0" eventType="touchUpInside" id="9Hf-Va-urZ"/>
+                                    <action selector="messageBoxEditing:" destination="WbP-Dz-da0" eventType="editingChanged" id="Exn-Wx-WLf"/>
+                                    <action selector="sendMsgPressed:" destination="WbP-Dz-da0" eventType="touchUpInside" id="920-VY-i2p"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hG3-vf-fTE">
@@ -159,6 +163,7 @@
                         <outlet property="channelNameLbl" destination="Jyj-L3-5yg" id="plk-uB-bO9"/>
                         <outlet property="menuBtn" destination="OeH-Kp-aEO" id="ZTM-MZ-QA3"/>
                         <outlet property="messageTxtBox" destination="Y0o-dp-tPv" id="yXL-TF-e3y"/>
+                        <outlet property="sendBtn" destination="upV-BJ-eau" id="qVo-2U-z1O"/>
                         <outlet property="tableView" destination="hG3-vf-fTE" id="ojt-gr-RbN"/>
                     </connections>
                 </viewController>
