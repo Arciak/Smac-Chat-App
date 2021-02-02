@@ -22,6 +22,7 @@ let URL_USER_ADD = "\(BASE_URL)user/add/"
 let URL_USER_BY_EMAIL = "\(BASE_URL)/user/byEmail/"
 let URL_GET_CHANNELS = "\(BASE_URL)channel/"
 let URL_GET_MESSAGE = "\(BASE_URL)message/byChannel/"
+let URL_UPDATE_NAME = "\(BASE_URL)user/"
 
 //Colors
 

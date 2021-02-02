@@ -27,6 +27,14 @@ class ProfileVC: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
+    
+    @IBAction func editNameBtnPressed(_ sender: Any) {
+        let updateName = UpdateProfile() // this is VC
+        updateName.modalPresentationStyle = .custom
+        present(updateName, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func logoutPressed(_ sender: Any) {
         UserDataService.instance.logoutUser()
         // now we inform that we logout

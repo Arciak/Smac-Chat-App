@@ -163,6 +163,30 @@ class AuthServices {
         }
     }
     
+    func updateUsrName(newName: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+        let lowerCaseEmail = email.lowercased()
+        struct BodyWebReq: Encodable {
+            let name: String
+            let email: String
+            let avatarName: String
+            let avatarColor: String
+        }
+        let changeAccName = BodyWebReq(name: newName, email: lowerCaseEmail, avatarName: avatarName, avatarColor: avatarColor)
+        
+        AF.request("\(URL_UPDATE_NAME)\(UserDataService.instance.id)", method: .put, parameters: changeAccName, encoder: JSONParameterEncoder.default, headers: BEARER_HEADER).validate(statusCode: 200..<500).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                print("This is new name: \(newName)")
+                UserDataService.instance.setUsrName(newName: newName)
+                completion(true)
+            case .failure(_):
+                print("FAILURE updateUsrName")
+                completion(false)
+                debugPrint(response.error as Any)
+            }
+        }
+    }
+    
     func setUserInfo(data: Data) {
         do {
             let json = try JSON(data: data)

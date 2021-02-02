@@ -45,8 +45,11 @@ class AddChannelVC: UIViewController {
         chanDesc.attributedPlaceholder = NSAttributedString(string: "description", attributes: [NSAttributedString.Key.foregroundColor : smackPurplePlaceholder])
     }
     
+    
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
 }
