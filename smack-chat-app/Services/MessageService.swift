@@ -17,6 +17,7 @@ class MessageService {
     
     var channels = [Channel]()
     var messages = [Message]()
+    var unreadChannels = [String]() // array of string which represents unread channels
     var selectedChannel : Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
@@ -34,7 +35,6 @@ class MessageService {
 
                 do {
                     let json = try JSON(data: data).arrayValue
-                    print("przed pentla for w findAllChannel")
                     //print("WTF:\(json)")
                     for item in json {
                         let name = item["name"].stringValue
@@ -46,7 +46,6 @@ class MessageService {
                     completion(true)
                     // add notification to let ChannelVC know: Hey I just pull out all the channels, so reload your tableView and display
                     NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
-                    print("Channels: \(self.channels)")
                 } catch {
                     debugPrint(error as Any)
                 }
@@ -66,7 +65,6 @@ class MessageService {
                 guard let data = response.data else { return }
                 do {
                     let json = try JSON(data: data).arrayValue
-                    print("przed pentla for w findAllMessageForChannel")
                     for item in json {
                         let messageBody = item["messageBody"].stringValue
                         let channelId = item["channelId"].stringValue
@@ -79,8 +77,6 @@ class MessageService {
                         let message = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
                         self.messages.append(message)
                     }
-                    print("Messages below: ")
-                    print(self.messages)
                     completion(true)
                 } catch {
                     debugPrint(error as Any)

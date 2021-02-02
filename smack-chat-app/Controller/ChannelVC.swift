@@ -30,9 +30,19 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         
         SocketService.instance.getChannel { (success) in
-            print("In SocketService instance in ChannelVC")
             if success {
                 self.tableView.reloadData() // if we success recive a new channel, we realod data
+            }
+        }
+        
+        // listen for new Messages in channels we are not current
+        SocketService.instance.getChatMessage { (newMessage) in
+            print("ChannelVC getChatMessage")
+            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthServices.instance.isLoggedIn {
+                print("In if getChatMessage ChannelVC")
+                MessageService.instance.unreadChannels.append(newMessage.channelId)
+                self.tableView.reloadData()
+                print("done In if getChatMessage ChannelVC")
             }
         }
     }
@@ -98,6 +108,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
             let channel = MessageService.instance.channels[indexPath.row]
             cell.configureCell(channel: channel)
+            print("configure cell")
             return cell
         } else {
             return UITableViewCell()
@@ -108,6 +119,15 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let channel = MessageService.instance.channels[indexPath.row]
         MessageService.instance.selectedChannel = channel
         NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
+        //back to normal size of fornt when read unread messages in channel
+        if MessageService.instance.unreadChannels.count > 0 {
+            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter{$0 != channel.id} // filtering when the item which is equal to this channel id
+        }
+        let index = IndexPath(row: indexPath.row, section: 0)
+        tableView.reloadRows(at: [index], with: .none)
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none) //selecr that row again we have to do this after reload
+        
         
         //slide back menu
         self.revealViewController().revealToggle(animated: true)
